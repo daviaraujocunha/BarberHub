@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarberHub - Detalhes e Agendamento</title>
+</head>
+<body>
+
+    <header>
+        <h1>BarberHub</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Início / Barbearias</a></li>
+                <li><a href="cadastro.html">Crie sua conta gratuitamente</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Barber Pub</h2>
+            <figure>
+                <img src="../assets/barberpub.jpg" alt="Foto da Barbearia Barber Pub" width="400">
+            </figure>
+            <p><strong>Endereço:</strong> Rua do Carmo, 131 - Centro, Sabará</p>
+            <p><strong>Avaliação:</strong> 4.8 (138 avaliações)</p>
+            <p><strong>Horário de Atendimento:</strong> Terça a Sábado, das 09:00 às 19:00</p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h3>Agendar Horário</h3>
+
+            <form action="confirmacaoCadastro.html" method="GET">
+                
+                <fieldset>
+                    <legend>1. Escolha o Serviço</legend>
+                    <p>
+                        <input type="radio" id="srv-corte" name="servico_agendado" value="corte" checked>
+                        <label for="srv-corte">Corte Masculino — R$ 45,00</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="srv-barba" name="servico_agendado" value="barba">
+                        <label for="srv-barba">Barba / Barboterapia — R$ 35,00</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="srv-combo" name="servico_agendado" value="combo">
+                        <label for="srv-combo">Combo (Corte + Barba) — R$ 70,00</label>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>2. Escolha o Barbeiro</legend>
+                    <p>
+                        <label for="barbeiro-select">Profissional:</label><br>
+                        <select id="barbeiro-select" name="barbeiro" required>
+                            <option value="">-- Selecione um barbeiro --</option>
+                            <option value="carlos">Carlos Silva (Especialista em Corte)</option>
+                            <option value="joao">João Santos (Especialista em Barba)</option>
+                        </select>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>3. Data e Horário</legend>
+                    <p>
+                        <label for="data-agendamento">Data:</label><br>
+                        <input type="date" id="data-agendamento" name="data_agendamento" required>
+                    </p>
+                    <p>
+                        <label for="hora-agendamento">Horário Disponível:</label><br>
+                        <input type="time" id="hora-agendamento" name="hora_agendamento" min="09:00" max="19:00" step="1800" required>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>4. Seus Dados para Confirmação</legend>
+                    <p>
+                        <label for="cliente-nome">Nome Completo:</label><br>
+                        <input type="text" id="cliente-nome" name="cliente_nome" required>
+                    </p>
+                    <p>
+                        <label for="cliente-telefone">Telefone / WhatsApp:</label><br>
+                        <input type="tel" id="cliente-telefone" name="cliente_telefone" required>
+                    </p>
+                </fieldset>
+
+                <p><button type="submit">Confirmar Agendamento</button></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>2026 BarberHub - Sistema de Gerenciamento e Agendamento para Barbearias.</p>
+    </footer>
+
+</body>
+</html>
