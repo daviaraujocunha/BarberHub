@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarberHub - Cadastro de Usuário</title>
+</head>
+<body>
+
+    <header>
+        <h1>BarberHub</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Início / Barbearias</a></li>
+                <li><a href="cadastro.html">Voltar para Opções</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Cadastro de Cliente</h2>
+
+            <form action="confirmacaoCadastro.html" method="GET">
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    <p>
+                        <label for="usr-nome">Nome Completo:</label><br>
+                        <input type="text" id="usr-nome" name="nome_completo" required>
+                    </p>
+                    <p>
+                        <label for="usr-telefone">Telefone:</label><br>
+                        <input type="tel" id="usr-telefone" name="telefone" required>
+                    </p>
+                    <p>
+                        <label for="usr-email">E-mail:</label><br>
+                        <input type="email" id="usr-email" name="email" required>
+                    </p>
+                    <p>
+                        <label for="usr-senha">Senha:</label><br>
+                        <input type="password" id="usr-senha" name="senha" minlength="6" required>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Endereço (ViaCEP)</legend>
+                    <p>
+                        <label for="usr-cep">CEP:</label><br>
+                        <input type="text" id="usr-cep" name="cep" maxlength="8" required>
+                        <button type="button">Buscar CEP</button>
+                    </p>
+                    <p>
+                        <label for="usr-logradouro">Logradouro / Rua:</label><br>
+                        <input type="text" id="usr-logradouro" name="logradouro" required>
+                    </p>
+                    <p>
+                        <label for="usr-numero">Número:</label><br>
+                        <input type="text" id="usr-numero" name="numero" required>
+                    </p>
+                    <p>
+                        <label for="usr-bairro">Bairro:</label><br>
+                        <input type="text" id="usr-bairro" name="bairro" required>
+                    </p>
+                    <p>
+                        <label for="usr-cidade">Cidade:</label><br>
+                        <input type="text" id="usr-cidade" name="cidade" required>
+                    </p>
+                    <p>
+                        <label for="usr-uf">UF:</label><br>
+                        <input type="text" id="usr-uf" name="uf" maxlength="2" required>
+                    </p>
+                </fieldset>
+
+                <p><button type="submit">Finalizar Cadastro</button></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>2026 BarberHub - Sistema de Gerenciamento e Agendamento para Barbearias.</p>
+    </footer>
+
+</body>
+</html>

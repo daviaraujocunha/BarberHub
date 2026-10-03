@@ -3,30 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BarberHub - Encontre a Barbearia mais próxima de você!</title>
+    <title>BarberHub - Encontre sua Barbearia</title>
 </head>
 <body>
-    <header>
-        <div>
-            <h1>BarberHub</h1>
-            <p>Agendamentos em barbearias simples e rápido</p>
-        </div>
 
+    <header>
+        <h1>BarberHub</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Início / Barbearias</a></li>
-                <li><a href="pages/cadastro-barbearia.html">Cadastrar Barbearia</a></li>
+                <li><a href="pages/cadastro.html">Crie sua conta gratuitamente</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <section>
+            <h2>Encontre as melhores barbearias da sua região</h2>
+            <p>Agende seu horário com os melhores profissionais de forma rápida e simples.</p>
+            
+            <form action="index.html" method="GET">
+                <input type="text" name="busca" placeholder="Buscar por nome da barbearia ou cidade...">
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
 
+        <hr>
+
+        <section>
+            <h3>Barbearias em Destaque:</h3>
+
+            <hr>
+
+            <article>
+                <h3>Barber Pub</h3>
+                <p><strong>Endereço:</strong> Rua do Carmo, 131 - Centro, Sabará</p>
+                <p><strong>Avaliação:</strong> 4.8 (138 avaliações)</p>
+                <p><a href="pages/detalhes.html">Ver Detalhes e Agendar</a></p>
+            </article>
+
+            <hr>
+
+            <article>
+                <h3>Nery Barber</h3>
+                <p><strong>Endereço:</strong> Rua José Maria Moreira, 465 - Praia dos Bandeirantes, Sabará</p>
+                <p><strong>Avaliação:</strong> 5.0 (564 avaliações)</p>
+                <p><a href="pages/detalhes.html">Ver Detalhes e Agendar</a></p>
+            </article>
+        </section>
     </main>
 
     <footer>
         <p>2026 BarberHub - Sistema de Gerenciamento e Agendamento para Barbearias.</p>
-        <p>Desenvolvido para fins acadêmicos.</p>
     </footer>
 
 </body>
