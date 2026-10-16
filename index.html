@@ -23,8 +23,28 @@
             <p>Agende seu horário com os melhores profissionais de forma rápida e simples.</p>
             
             <form action="index.html" method="GET">
-                <input type="text" name="busca" placeholder="Buscar por nome da barbearia ou cidade...">
-                <button type="submit">Buscar</button>
+                <p>
+                    <input type="text" name="busca" placeholder="Buscar por nome da barbearia ou cidade...">
+                    <button type="submit">Buscar</button>
+                </p>
+
+                <!-- Controles de Filtro e Ordenação adicionados -->
+                <p>
+                    <label for="filtro-categoria">Filtrar por Categoria:</label>
+                    <select id="filtro-categoria" name="categoria">
+                        <option value="todas">Todas as Categorias</option>
+                        <option value="tradicional">Tradicional</option>
+                        <option value="premium">Premium</option>
+                        <option value="pub">Barber Pub / Bar</option>
+                    </select>
+
+                    <label for="ordenacao">Ordenar por:</label>
+                    <select id="ordenacao" name="ordenacao">
+                        <option value="nome">Nome (A-Z)</option>
+                        <option value="avaliacao">Melhor Avaliadas</option>
+                        <option value="recentes">Mais Recentes</option>
+                    </select>
+                </p>
             </form>
         </section>
 
@@ -57,7 +77,12 @@
                     <li>Combo (Corte + Barba) - R$ 70,00</li>
                 </ul>
 
-                <p><a href="pages/detalhesBarberPub.html">Ver Detalhes e Agendar</a></p>
+                <!-- Ações e Botões Adicionados -->
+                <p>
+                    <a href="pages/detalhesBarberPub.html">Ver Detalhes e Agendar</a> | 
+                    <button type="button">Editar</button> | 
+                    <button type="button">Excluir</button>
+                </p>
             </article>
 
             <hr>
@@ -84,7 +109,12 @@
                     <li>Sobrancelha - R$ 15,00</li>
                 </ul>
 
-                <p><a href="pages/detalhesNeryBarber.html">Ver Detalhes e Agendar</a></p>
+                <!-- Ações e Botões Adicionados -->
+                <p>
+                    <a href="pages/detalhesNeryBarber.html">Ver Detalhes e Agendar</a> | 
+                    <button type="button">Editar</button> | 
+                    <button type="button">Excluir</button>
+                </p>
             </article>
         </section>
     </main>
