@@ -1,0 +1,80 @@
+:root {
+    --primary-color: #d97706; 
+    --primary-hover: #b45309;
+    --bg-color: #f9fafb;
+    --text-color: #1f2937;
+    --border-color: #e5e7eb;
+    --card-bg: #ffffff;
+    --danger-color: #dc2626;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+*:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+header {
+    background-color: #111827; 
+    color: #ffffff;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+main {
+    flex: 1; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+footer {
+    background-color: #111827;
+    color: #9ca3af;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+}
