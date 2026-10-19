@@ -206,3 +206,32 @@ input[type="radio"] {
     width: auto;
     margin-right: 0.5rem;
 }
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    main {
+        padding: 1rem;
+    }
+
+    section:nth-of-type(2) {
+        grid-template-columns: 1fr;
+    }
+    
+    form[action="index.html"] input,
+    form[action="index.html"] select,
+    form[action="index.html"] button {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+}
