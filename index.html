@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,37 +13,94 @@
         <h1>BarberHub</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Início / Barbearias</a></li>
-                <li><a href="pages/cadastro.html">Crie sua conta gratuitamente</a></li>
+                <li>
+                    <a href="index.html">
+                        Início / Barbearias
+                    </a>
+                </li>
+                <li>
+                    <a href="pages/cadastro.html">
+                        Crie sua conta gratuitamente
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section>
-            <h2>Encontre as melhores barbearias da sua região</h2>
-            <p>Agende seu horário com os melhores profissionais de forma rápida e simples.</p>
-            
-            <form action="index.html" method="GET">
+            <h2>
+                Encontre as melhores barbearias da sua região
+            </h2>
+
+            <p>
+                Agende seu horário com os melhores
+                profissionais de forma rápida e simples.
+            </p>
+
+            <form action="index.html"
+                  method="GET"
+                  onsubmit="return false;">
+
                 <p>
-                    <label for="busca">Pesquisar:</label>
-                    <input type="text" id="busca" name="busca" placeholder="Buscar por nome da barbearia ou cidade...">
-                    <button type="submit">Buscar</button>
+                    <label for="busca">
+                        Pesquisar:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="busca"
+                        name="busca"
+                        placeholder="Buscar por nome da barbearia ou cidade..."
+                    >
+
+                    <button type="button" id="botao-buscar">
+                        Buscar
+                    </button>
                 </p>
+
                 <p>
-                    <label for="filtro-categoria">Filtrar por Categoria:</label>
-                    <select id="filtro-categoria" name="categoria">
-                        <option value="todas">Todas as Categorias</option>
-                        <option value="tradicional">Tradicional</option>
-                        <option value="premium">Premium</option>
-                        <option value="pub">Barber Pub / Bar</option>
+                    <label for="filtro-categoria">
+                        Filtrar por Categoria:
+                    </label>
+
+                    <select
+                        id="filtro-categoria"
+                        name="categoria"
+                    >
+                        <option value="todas">
+                            Todas as Categorias
+                        </option>
+
+                        <option value="tradicional">
+                            Tradicional
+                        </option>
+
+                        <option value="premium">
+                            Premium
+                        </option>
+
+                        <option value="pub">
+                            Barber Pub / Bar
+                        </option>
                     </select>
 
-                    <label for="ordenacao">Ordenar por:</label>
+                    <label for="ordenacao">
+                        Ordenar por:
+                    </label>
+
                     <select id="ordenacao" name="ordenacao">
-                        <option value="nome">Nome (A-Z)</option>
-                        <option value="avaliacao">Melhor Avaliadas</option>
-                        <option value="recentes">Mais Recentes</option>
+                        <option value="nome">
+                            Nome (A-Z)
+                        </option>
+
+                        <option value="avaliacao">
+                            Melhor Avaliadas
+                        </option>
+
+                        <option value="recentes">
+                            Mais Recentes
+                        </option>
                     </select>
                 </p>
             </form>
@@ -53,73 +111,41 @@
         <section>
             <h2>Barbearias em Destaque:</h2>
 
-            <hr>
+            <p
+                id="estado-lista"
+                role="status"
+                aria-live="polite"
+            ></p>
+        </section>
 
-            <article>
-                <figure>
-                    <img src="assets/img/barberpub.jpg" alt="Foto da fachada da Barber Pub" width="300">
-                </figure>
-                <h3>Barber Pub</h3>
-                <p><strong>Endereço:</strong> Rua do Carmo, 131 - Centro, Sabará</p>
-                <p><strong>Avaliação:</strong> 4.8 (138 avaliações)</p>
-                <p><strong>Horário de Funcionamento:</strong> Terça a Sábado, das 09:00 às 19:00</p>
-                
-                <p><strong>Equipe de Barbeiros:</strong></p>
-                <ul>
-                    <li>Carlos Silva (Especialista em Corte Masculino)</li>
-                    <li>João Santos (Especialista em Barba e Visagismo)</li>
-                </ul>
+        <section
+            id="lista-barbearias"
+            aria-label="Barbearias cadastradas"
+        >
+            <!--
+                As barbearias serão carregadas
+                automaticamente pelo JavaScript.
 
-                <p><strong>Serviços e Valores:</strong></p>
-                <ul>
-                    <li>Corte Masculino - R$ 45,00</li>
-                    <li>Barba / Barboterapia - R$ 35,00</li>
-                    <li>Combo (Corte + Barba) - R$ 70,00</li>
-                </ul>
-                <p>
-                    <a href="pages/detalhesBarberPub.html">Ver Detalhes e Agendar</a> | 
-                    <button type="button">Editar</button> | 
-                    <button type="button">Excluir</button>
-                </p>
-            </article>
-
-            <hr>
-
-            <article>
-                <figure>
-                    <img src="assets/img/nerybarber.jpg" alt="Foto interior da Nery Barber" width="300">
-                </figure>
-                <h3>Nery Barber</h3>
-                <p><strong>Endereço:</strong> Rua José Maria Moreira, 465 - Praia dos Bandeirantes, Sabará</p>
-                <p><strong>Avaliação:</strong> 5.0 (564 avaliações)</p>
-                <p><strong>Horário de Funcionamento:</strong> Terça a Sábado, das 08:30 às 20:00</p>
-                
-                <p><strong>Equipe de Barbeiros:</strong></p>
-                <ul>
-                    <li>Lucas Nery (Master Barber)</li>
-                    <li>Mateus Rocha (Especialista em Degradê e Barba)</li>
-                </ul>
-
-                <p><strong>Serviços e Valores:</strong></p>
-                <ul>
-                    <li>Corte Masculino - R$ 50,00</li>
-                    <li>Barba / Barboterapia - R$ 40,00</li>
-                    <li>Sobrancelha - R$ 15,00</li>
-                </ul>
-                <p>
-                    <a href="pages/detalhesNeryBarber.html">Ver Detalhes e Agendar</a> | 
-                    <button type="button">Editar</button> | 
-                    <button type="button">Excluir</button>
-                </p>
-            </article>
+                Os dados são recuperados do
+                localStorage, preservando os
+                cadastros já existentes.
+            -->
         </section>
     </main>
 
     <hr>
 
     <footer>
-        <p>2026 BarberHub - Sistema de Gerenciamento e Agendamento para Barbearias.</p>
+        <p>
+            2026 BarberHub - Sistema de Gerenciamento
+            e Agendamento para Barbearias.
+        </p>
     </footer>
+
+    <script
+        src="assets/js/script.js"
+        defer
+    ></script>
 
 </body>
 </html>
