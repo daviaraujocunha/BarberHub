@@ -4,295 +4,548 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BarberHub - Cadastro de Barbearia</title>
+  <title>BarberHub | Cadastro de Barbearia</title>
+
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="../assets/css/pesquisa.css">
+  <link rel="stylesheet" href="../assets/css/cadastroEtapas.css">
+
   <script src="../assets/js/script.js" defer></script>
+  <script src="../assets/js/cadastroEtapas.js" defer></script>
 </head>
 <body>
   <header>
     <h1>
-        <a href="../index.html" class="logo-barberhub">
+      <a class="marca-cadastro" href="../index.html">
         BarberHub
-        </a>
+      </a>
     </h1>
+
     <nav>
       <ul>
         <li><a href="../index.html">Início / Barbearias</a></li>
-        <li><a href="cadastro.html">Voltar para Opções</a></li>
+        <li><a href="cadastro.html">Opções de cadastro</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>Cadastro de Barbearia</h2>
-      <p id="mensagem-form" aria-live="polite"></p>
-
-      <form id="form-barbearia">
-        <fieldset>
-          <legend>Etapa 1: Dados e Identidade da Barbearia</legend>
-
-          <p>
-            <label for="barber-nome">Nome da Barbearia:</label>
-            <input type="text" id="barber-nome"
-                   name="nome_barbearia" maxlength="100" required>
-          </p>
-
-          <p>
-            <label for="barber-foto">Foto da Barbearia / Fachada:</label>
-            <input type="file" id="barber-foto"
-                   name="foto_barbearia" accept="image/*" required>
-          </p>
-
-          <p>
-            <label for="barber-categoria">Categoria:</label>
-            <select id="barber-categoria" name="categoria" required>
-              <option value="tradicional">Tradicional</option>
-              <option value="premium">Premium</option>
-              <option value="pub">Barber Pub / Bar</option>
-            </select>
-          </p>
-
-          <p>
-            <label for="barber-resp">Responsável Principal:</label>
-            <input type="text" id="barber-resp"
-                   name="responsavel" required>
-          </p>
-
-          <p>
-            <label for="barber-email">E-mail:</label>
-            <input type="email" id="barber-email"
-                   name="email" required>
-          </p>
-
-          <p>
-            <label for="barber-senha">
-              Senha (demonstração, não armazenada):
-            </label>
-            <input type="password" id="barber-senha"
-                   name="senha" minlength="6"
-                   autocomplete="new-password" required>
-          </p>
-        </fieldset>
-
-        <fieldset>
-          <legend>Etapa 2: Endereço (ViaCEP)</legend>
-
-          <p>
-            <label for="barber-cep">CEP:</label>
-            <input type="text" id="barber-cep" name="cep"
-                   maxlength="9" inputmode="numeric"
-                   placeholder="00000-000"
-                   pattern="[0-9]{5}-?[0-9]{3}" required>
-            <button type="button" id="buscar-cep">
-              Buscar CEP
-            </button>
-          </p>
-
-          <p>
-            <label for="barber-logradouro">Rua / Logradouro:</label>
-            <input type="text" id="barber-logradouro"
-                   name="logradouro" required>
-          </p>
-
-          <p>
-            <label for="barber-numero">Número:</label>
-            <input type="text" id="barber-numero"
-                   name="numero" required>
-          </p>
-
-          <p>
-            <label for="barber-bairro">Bairro:</label>
-            <input type="text" id="barber-bairro"
-                   name="bairro" required>
-          </p>
-
-          <p>
-            <label for="barber-cidade">Cidade:</label>
-            <input type="text" id="barber-cidade"
-                   name="cidade" required>
-          </p>
-
-          <p>
-            <label for="barber-uf">UF:</label>
-            <input type="text" id="barber-uf"
-                   name="uf" maxlength="2" minlength="2" required>
-          </p>
-        </fieldset>
-
-        <fieldset>
-          <legend>Etapa 3: Equipe de Barbeiros</legend>
-          <p>Cadastre os profissionais da sua barbearia:</p>
-
-          <div>
-            <h4>Barbeiro 1</h4>
-
-            <p>
-              <label for="barbeiro1-nome">Nome:</label>
-              <input type="text" id="barbeiro1-nome"
-                     name="barbeiro1_nome" required>
-            </p>
-
-            <p>
-              <label for="barbeiro1-sobrenome">Sobrenome:</label>
-              <input type="text" id="barbeiro1-sobrenome"
-                     name="barbeiro1_sobrenome" required>
-            </p>
-
-            <p>
-              <label for="barbeiro1-foto">Foto (opcional):</label>
-              <input type="file" id="barbeiro1-foto"
-                     accept="image/*">
-            </p>
-          </div>
-
-          <div>
-            <h4>Barbeiro 2 (Opcional)</h4>
-
-            <p>
-              <label for="barbeiro2-nome">Nome:</label>
-              <input type="text" id="barbeiro2-nome"
-                     name="barbeiro2_nome">
-            </p>
-
-            <p>
-              <label for="barbeiro2-sobrenome">Sobrenome:</label>
-              <input type="text" id="barbeiro2-sobrenome"
-                     name="barbeiro2_sobrenome">
-            </p>
-
-            <p>
-              <label for="barbeiro2-foto">Foto (opcional):</label>
-              <input type="file" id="barbeiro2-foto"
-                     accept="image/*">
-            </p>
-          </div>
-
-          <div>
-            <h4>Barbeiro 3 (Opcional)</h4>
-
-            <p>
-              <label for="barbeiro3-nome">Nome:</label>
-              <input type="text" id="barbeiro3-nome"
-                     name="barbeiro3_nome">
-            </p>
-
-            <p>
-              <label for="barbeiro3-sobrenome">Sobrenome:</label>
-              <input type="text" id="barbeiro3-sobrenome"
-                     name="barbeiro3_sobrenome">
-            </p>
-
-            <p>
-              <label for="barbeiro3-foto">Foto (opcional):</label>
-              <input type="file" id="barbeiro3-foto"
-                     accept="image/*">
-            </p>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Etapa 4: Horários de Funcionamento</legend>
-
-          <p>
-            <label for="hora-abertura">Horário de Abertura:</label>
-            <input type="time" id="hora-abertura"
-                   name="hora_abertura" value="09:00" required>
-          </p>
-
-          <p>
-            <label for="hora-fechamento">Horário de Fechamento:</label>
-            <input type="time" id="hora-fechamento"
-                   name="hora_fechamento" value="19:00" required>
-          </p>
-
-          <p><strong>Dias de Atendimento:</strong></p>
-
-          <ul>
-            <li>
-              <input type="checkbox" id="dia-seg"
-                     name="dias" value="segunda">
-              <label for="dia-seg">Segunda-feira</label>
-            </li>
-            <li>
-              <input type="checkbox" id="dia-ter"
-                     name="dias" value="terca" checked>
-              <label for="dia-ter">Terça-feira</label>
-            </li>
-            <li>
-              <input type="checkbox" id="dia-qua"
-                     name="dias" value="quarta" checked>
-              <label for="dia-qua">Quarta-feira</label>
-            </li>
-            <li>
-              <input type="checkbox" id="dia-qui"
-                     name="dias" value="quinta" checked>
-              <label for="dia-qui">Quinta-feira</label>
-            </li>
-            <li>
-              <input type="checkbox" id="dia-sex"
-                     name="dias" value="sexta" checked>
-              <label for="dia-sex">Sexta-feira</label>
-            </li>
-            <li>
-              <input type="checkbox" id="dia-sab"
-                     name="dias" value="sabado" checked>
-              <label for="dia-sab">Sábado</label>
-            </li>
-            <li>
-              <input type="checkbox" id="dia-dom"
-                     name="dias" value="domingo">
-              <label for="dia-dom">Domingo</label>
-            </li>
-          </ul>
-        </fieldset>
-
-        <fieldset>
-          <legend>Etapa 5: Serviços e Valores</legend>
-          <p>Selecione os serviços oferecidos e informe os preços:</p>
-
-          <p>
-            <input type="checkbox" id="srv-corte" checked>
-            <label for="srv-corte">Corte Masculino</label>
-            <label for="preco-corte">Preço (R$):</label>
-            <input type="number" id="preco-corte"
-                   value="45" min="0" step="0.50">
-          </p>
-
-          <p>
-            <input type="checkbox" id="srv-barba" checked>
-            <label for="srv-barba">Barba / Barboterapia</label>
-            <label for="preco-barba">Preço (R$):</label>
-            <input type="number" id="preco-barba"
-                   value="35" min="0" step="0.50">
-          </p>
-
-          <p>
-            <input type="checkbox" id="srv-combo" checked>
-            <label for="srv-combo">Combo (Corte + Barba)</label>
-            <label for="preco-combo">Preço (R$):</label>
-            <input type="number" id="preco-combo"
-                   value="70" min="0" step="0.50">
-          </p>
-
-          <p>
-            <input type="checkbox" id="srv-sobrancelha">
-            <label for="srv-sobrancelha">Sobrancelha</label>
-            <label for="preco-sobrancelha">Preço (R$):</label>
-            <input type="number" id="preco-sobrancelha"
-                   value="15" min="0" step="0.50">
-          </p>
-        </fieldset>
-
+  <main class="cadastro-main">
+    <section class="cadastro-pagina">
+      <div class="apresentacao-cadastro">
+        <span class="sobretitulo">
+          BARBERHUB PARA PROFISSIONAIS
+        </span>
+        <h2 id="titulo-pagina">Cadastre sua barbearia</h2>
         <p>
-          <button type="submit">
-            Concluir e Cadastrar Barbearia
-          </button>
+          Preencha as informações em cinco etapas.
+          Você pode voltar e corrigir seus dados antes de salvar.
         </p>
-      </form>
+      </div>
+
+      <div class="layout-cadastro">
+
+        <!-- PAINEL LATERAL COM AS ETAPAS -->
+        <aside class="painel-etapas" aria-label="Etapas do cadastro">
+          <span class="painel-destaque">SEU ESTABELECIMENTO</span>
+          <h3>Vamos colocar sua barbearia no mapa.</h3>
+          <p>
+            Um cadastro organizado facilita a apresentação
+            dos seus serviços.
+          </p>
+
+          <ol class="lista-etapas" id="lista-etapas">
+            <li class="ativo">
+              <span>01</span>
+              <strong>Dados da barbearia</strong>
+            </li>
+            <li>
+              <span>02</span>
+              <strong>Endereço</strong>
+            </li>
+            <li>
+              <span>03</span>
+              <strong>Equipe</strong>
+            </li>
+            <li>
+              <span>04</span>
+              <strong>Funcionamento</strong>
+            </li>
+            <li>
+              <span>05</span>
+              <strong>Serviços e valores</strong>
+            </li>
+          </ol>
+
+          <small>
+            Os dados são armazenados neste navegador
+            (versão demonstrativa).
+          </small>
+        </aside>
+
+        <!-- FORMULÁRIO -->
+        <div class="cartao-cadastro">
+
+          <div class="cabecalho-progresso">
+            <span id="nome-passo">Dados da barbearia</span>
+            <strong id="contador-passo">Etapa 1 de 5</strong>
+          </div>
+
+          <div class="trilha-progresso" aria-hidden="true">
+            <span id="barra-progresso"></span>
+          </div>
+
+          <p
+            id="mensagem-form"
+            class="mensagem-cadastro"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></p>
+
+          <form id="cadastro-etapas" novalidate>
+
+            <!-- ETAPA 1: DADOS DA BARBEARIA -->
+            <fieldset class="etapa" data-etapa="0">
+              <legend>Identidade e contato</legend>
+              <p class="descricao-etapa">
+                Conte um pouco sobre o seu estabelecimento.
+              </p>
+
+              <div class="grade-campos">
+                <div class="campo campo-inteiro">
+                  <label for="barber-nome">Nome da barbearia *</label>
+                  <input
+                    id="barber-nome"
+                    name="nome_barbearia"
+                    type="text"
+                    maxlength="100"
+                    placeholder="Ex.: Barbearia Central"
+                    required
+                  >
+                </div>
+
+                <div class="campo">
+                  <label for="barber-categoria">Categoria *</label>
+                  <select
+                    id="barber-categoria"
+                    name="categoria"
+                    required
+                  >
+                    <option value="tradicional">Tradicional</option>
+                    <option value="premium">Premium</option>
+                  </select>
+                </div>
+
+                <div class="campo">
+                  <label for="barber-resp">Nome do responsável *</label>
+                  <input
+                    id="barber-resp"
+                    name="responsavel"
+                    type="text"
+                    placeholder="Nome completo"
+                    required
+                  >
+                </div>
+
+                <div class="campo campo-inteiro">
+                  <label for="barber-email">E-mail de contato *</label>
+                  <input
+                    id="barber-email"
+                    name="email"
+                    type="email"
+                    placeholder="contato@barbearia.com"
+                    required
+                  >
+                </div>
+
+                <div class="campo campo-inteiro">
+                  <label for="barber-foto">Foto da fachada *</label>
+                  <input
+                    id="barber-foto"
+                    type="file"
+                    accept="image/jpeg,image/png,image/webp"
+                    required
+                  >
+                  <small>
+                    JPG, PNG ou WebP, até 5 MB.
+                    Na edição, você pode manter a foto atual.
+                  </small>
+                  <img
+                    id="preview-foto"
+                    class="preview-foto"
+                    alt="Prévia da foto da barbearia"
+                    hidden
+                  >
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- ETAPA 2: ENDEREÇO -->
+            <fieldset class="etapa" data-etapa="1" hidden>
+              <legend>Onde fica sua barbearia?</legend>
+              <p class="descricao-etapa">
+                Informe o CEP para preencher automaticamente
+                os dados do endereço.
+              </p>
+
+              <div class="grade-campos">
+                <div class="campo campo-inteiro">
+                  <label for="barber-cep">CEP *</label>
+                  <div class="grupo-cep">
+                    <input
+                      id="barber-cep"
+                      name="cep"
+                      type="text"
+                      maxlength="9"
+                      inputmode="numeric"
+                      placeholder="00000-000"
+                      pattern="[0-9]{5}-?[0-9]{3}"
+                      required
+                    >
+                    <button
+                      type="button"
+                      id="buscar-cep"
+                      class="botao-secundario"
+                    >
+                      Buscar CEP
+                    </button>
+                  </div>
+                </div>
+
+                <div class="campo campo-inteiro">
+                  <label for="barber-logradouro">Rua / Logradouro *</label>
+                  <input
+                    id="barber-logradouro"
+                    name="logradouro"
+                    type="text"
+                    required
+                  >
+                </div>
+
+                <div class="campo">
+                  <label for="barber-numero">Número *</label>
+                  <input
+                    id="barber-numero"
+                    name="numero"
+                    type="text"
+                    required
+                  >
+                </div>
+
+                <div class="campo">
+                  <label for="barber-bairro">Bairro *</label>
+                  <input
+                    id="barber-bairro"
+                    name="bairro"
+                    type="text"
+                    required
+                  >
+                </div>
+
+                <div class="campo">
+                  <label for="barber-cidade">Cidade *</label>
+                  <input
+                    id="barber-cidade"
+                    name="cidade"
+                    type="text"
+                    required
+                  >
+                </div>
+
+                <div class="campo">
+                  <label for="barber-uf">Estado (UF) *</label>
+                  <input
+                    id="barber-uf"
+                    name="uf"
+                    type="text"
+                    maxlength="2"
+                    minlength="2"
+                    placeholder="MG"
+                    required
+                  >
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- ETAPA 3: EQUIPE -->
+            <fieldset class="etapa" data-etapa="2" hidden>
+              <legend>Equipe de barbeiros</legend>
+              <p class="descricao-etapa">
+                Cadastre pelo menos um profissional.
+                Os outros são opcionais.
+              </p>
+
+              <div class="lista-profissionais">
+
+                <div class="cartao-profissional">
+                  <h4>
+                    Profissional 1
+                    <span>Obrigatório</span>
+                  </h4>
+
+                  <div class="grade-campos">
+                    <div class="campo">
+                      <label for="barbeiro1-nome">Nome *</label>
+                      <input id="barbeiro1-nome" type="text" required>
+                    </div>
+                    <div class="campo">
+                      <label for="barbeiro1-sobrenome">Sobrenome *</label>
+                      <input id="barbeiro1-sobrenome" type="text" required>
+                    </div>
+                    <div class="campo campo-inteiro">
+                      <label for="barbeiro1-foto">Foto (opcional)</label>
+                      <input
+                        id="barbeiro1-foto"
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp"
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cartao-profissional">
+                  <h4>
+                    Profissional 2
+                    <span>Opcional</span>
+                  </h4>
+
+                  <div class="grade-campos">
+                    <div class="campo">
+                      <label for="barbeiro2-nome">Nome</label>
+                      <input id="barbeiro2-nome" type="text">
+                    </div>
+                    <div class="campo">
+                      <label for="barbeiro2-sobrenome">Sobrenome</label>
+                      <input id="barbeiro2-sobrenome" type="text">
+                    </div>
+                    <div class="campo campo-inteiro">
+                      <label for="barbeiro2-foto">Foto (opcional)</label>
+                      <input
+                        id="barbeiro2-foto"
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp"
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="cartao-profissional">
+                  <h4>
+                    Profissional 3
+                    <span>Opcional</span>
+                  </h4>
+
+                  <div class="grade-campos">
+                    <div class="campo">
+                      <label for="barbeiro3-nome">Nome</label>
+                      <input id="barbeiro3-nome" type="text">
+                    </div>
+                    <div class="campo">
+                      <label for="barbeiro3-sobrenome">Sobrenome</label>
+                      <input id="barbeiro3-sobrenome" type="text">
+                    </div>
+                    <div class="campo campo-inteiro">
+                      <label for="barbeiro3-foto">Foto (opcional)</label>
+                      <input
+                        id="barbeiro3-foto"
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp"
+                      >
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </fieldset>
+
+            <!-- ETAPA 4: FUNCIONAMENTO -->
+            <fieldset class="etapa" data-etapa="3" hidden>
+              <legend>Horários de funcionamento</legend>
+              <p class="descricao-etapa">
+                Defina quando os clientes poderão encontrar sua equipe.
+              </p>
+
+              <div class="grade-campos">
+                <div class="campo">
+                  <label for="hora-abertura">Abertura *</label>
+                  <input
+                    id="hora-abertura"
+                    name="hora_abertura"
+                    type="time"
+                    value="09:00"
+                    required
+                  >
+                </div>
+
+                <div class="campo">
+                  <label for="hora-fechamento">Fechamento *</label>
+                  <input
+                    id="hora-fechamento"
+                    name="hora_fechamento"
+                    type="time"
+                    value="19:00"
+                    required
+                  >
+                </div>
+              </div>
+
+              <p class="titulo-opcoes">Dias de atendimento *</p>
+
+              <div class="grade-dias">
+                <label class="opcao-dia">
+                  <input type="checkbox" name="dias" value="segunda">
+                  <span>Segunda</span>
+                </label>
+                <label class="opcao-dia">
+                  <input type="checkbox" name="dias" value="terca" checked>
+                  <span>Terça</span>
+                </label>
+                <label class="opcao-dia">
+                  <input type="checkbox" name="dias" value="quarta" checked>
+                  <span>Quarta</span>
+                </label>
+                <label class="opcao-dia">
+                  <input type="checkbox" name="dias" value="quinta" checked>
+                  <span>Quinta</span>
+                </label>
+                <label class="opcao-dia">
+                  <input type="checkbox" name="dias" value="sexta" checked>
+                  <span>Sexta</span>
+                </label>
+                <label class="opcao-dia">
+                  <input type="checkbox" name="dias" value="sabado" checked>
+                  <span>Sábado</span>
+                </label>
+                <label class="opcao-dia">
+                  <input type="checkbox" name="dias" value="domingo">
+                  <span>Domingo</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- ETAPA 5: SERVIÇOS -->
+            <fieldset class="etapa" data-etapa="4" hidden>
+              <legend>Serviços e valores</legend>
+              <p class="descricao-etapa">
+                Selecione pelo menos um serviço e informe
+                o preço de cada um.
+              </p>
+
+              <div class="lista-servicos">
+
+                <div class="servico-item">
+                  <label for="srv-corte">
+                    <input id="srv-corte" type="checkbox" checked>
+                    <span>Corte masculino</span>
+                  </label>
+                  <div class="campo">
+                    <label for="preco-corte">Preço (R$)</label>
+                    <input
+                      id="preco-corte"
+                      type="number"
+                      min="0"
+                      step="0.50"
+                      value="45"
+                      required
+                    >
+                  </div>
+                </div>
+
+                <div class="servico-item">
+                  <label for="srv-barba">
+                    <input id="srv-barba" type="checkbox" checked>
+                    <span>Barba / Barboterapia</span>
+                  </label>
+                  <div class="campo">
+                    <label for="preco-barba">Preço (R$)</label>
+                    <input
+                      id="preco-barba"
+                      type="number"
+                      min="0"
+                      step="0.50"
+                      value="35"
+                      required
+                    >
+                  </div>
+                </div>
+
+                <div class="servico-item">
+                  <label for="srv-combo">
+                    <input id="srv-combo" type="checkbox" checked>
+                    <span>Combo (Corte + Barba)</span>
+                  </label>
+                  <div class="campo">
+                    <label for="preco-combo">Preço (R$)</label>
+                    <input
+                      id="preco-combo"
+                      type="number"
+                      min="0"
+                      step="0.50"
+                      value="70"
+                      required
+                    >
+                  </div>
+                </div>
+
+                <div class="servico-item">
+                  <label for="srv-sobrancelha">
+                    <input id="srv-sobrancelha" type="checkbox">
+                    <span>Sobrancelha</span>
+                  </label>
+                  <div class="campo">
+                    <label for="preco-sobrancelha">Preço (R$)</label>
+                    <input
+                      id="preco-sobrancelha"
+                      type="number"
+                      min="0"
+                      step="0.50"
+                      value="15"
+                      disabled
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <p class="aviso-demonstracao">
+                Ao concluir, seu estabelecimento aparecerá na
+                página inicial do BarberHub neste navegador.
+              </p>
+            </fieldset>
+
+            <!-- NAVEGAÇÃO -->
+            <div class="navegacao-formulario">
+              <button
+                type="button"
+                id="voltar-etapa"
+                class="botao-voltar"
+                hidden
+              >
+                Voltar
+              </button>
+
+              <button
+                type="button"
+                id="proxima-etapa"
+                class="botao-avancar"
+              >
+                Continuar →
+              </button>
+
+              <button
+                type="submit"
+                id="salvar-barbearia"
+                class="botao-avancar"
+                hidden
+              >
+                Concluir cadastro
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
     </section>
   </main>
+
   <footer>
     <p>
       2026 BarberHub - Sistema de Gerenciamento
