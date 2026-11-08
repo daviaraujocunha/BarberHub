@@ -2,150 +2,108 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BarberHub - Encontre sua Barbearia</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BarberHub - Encontre sua Barbearia</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/script.js" defer></script>
 </head>
 <body>
+  <header>
+    <h1>BarberHub</h1>
 
-    <header>
-        <h1>BarberHub</h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="index.html">
-                        Início / Barbearias
-                    </a>
-                </li>
-                <li>
-                    <a href="pages/cadastro.html">
-                        Crie sua conta gratuitamente
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">Início / Barbearias</a>
+        </li>
+        <li>
+          <a href="pages/cadastro.html">
+            Crie sua conta gratuitamente
+          </a>
+        </li>
+        <li>
+          <a href="pages/cadastroBarbearia.html">
+            Cadastrar Barbearia
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section>
-            <h2>
-                Encontre as melhores barbearias da sua região
-            </h2>
+  <main>
+    <section>
+      <h2>
+        Encontre as melhores barbearias da sua região
+      </h2>
 
-            <p>
-                Agende seu horário com os melhores
-                profissionais de forma rápida e simples.
-            </p>
+      <p>
+        Agende seu horário com os melhores profissionais
+        de forma rápida e simples.
+      </p>
 
-            <form action="index.html"
-                  method="GET"
-                  onsubmit="return false;">
-
-                <p>
-                    <label for="busca">
-                        Pesquisar:
-                    </label>
-
-                    <input
-                        type="text"
-                        id="busca"
-                        name="busca"
-                        placeholder="Buscar por nome da barbearia ou cidade..."
-                    >
-
-                    <button type="button" id="botao-buscar">
-                        Buscar
-                    </button>
-                </p>
-
-                <p>
-                    <label for="filtro-categoria">
-                        Filtrar por Categoria:
-                    </label>
-
-                    <select
-                        id="filtro-categoria"
-                        name="categoria"
-                    >
-                        <option value="todas">
-                            Todas as Categorias
-                        </option>
-
-                        <option value="tradicional">
-                            Tradicional
-                        </option>
-
-                        <option value="premium">
-                            Premium
-                        </option>
-
-                        <option value="pub">
-                            Barber Pub / Bar
-                        </option>
-                    </select>
-
-                    <label for="ordenacao">
-                        Ordenar por:
-                    </label>
-
-                    <select id="ordenacao" name="ordenacao">
-                        <option value="nome">
-                            Nome (A-Z)
-                        </option>
-
-                        <option value="avaliacao">
-                            Melhor Avaliadas
-                        </option>
-
-                        <option value="recentes">
-                            Mais Recentes
-                        </option>
-                    </select>
-                </p>
-            </form>
-        </section>
-
-        <hr>
-
-        <section>
-            <h2>Barbearias em Destaque:</h2>
-
-            <p
-                id="estado-lista"
-                role="status"
-                aria-live="polite"
-            ></p>
-        </section>
-
-        <section
-            id="lista-barbearias"
-            aria-label="Barbearias cadastradas"
-        >
-            <!--
-                As barbearias serão carregadas
-                automaticamente pelo JavaScript.
-
-                Os dados são recuperados do
-                localStorage, preservando os
-                cadastros já existentes.
-            -->
-        </section>
-    </main>
-
-    <hr>
-
-    <footer>
+      <form action="index.html" method="GET">
         <p>
-            2026 BarberHub - Sistema de Gerenciamento
-            e Agendamento para Barbearias.
+          <label for="busca">Pesquisar:</label>
+
+          <input
+            type="search"
+            id="busca"
+            name="busca"
+            placeholder="Buscar por nome da barbearia ou cidade..."
+          >
+
+          <button type="submit">Buscar</button>
         </p>
-    </footer>
 
-    <script
-        src="assets/js/script.js"
-        defer
-    ></script>
+        <p>
+          <label for="filtro-categoria">
+            Filtrar por Categoria:
+          </label>
 
+          <select id="filtro-categoria" name="categoria">
+            <option value="todas">Todas as Categorias</option>
+            <option value="tradicional">Tradicional</option>
+            <option value="premium">Premium</option>
+            <option value="pub">Barber Pub / Bar</option>
+          </select>
+
+          <label for="ordenacao">Ordenar por:</label>
+
+          <select id="ordenacao" name="ordenacao">
+            <option value="nome">Nome (A-Z)</option>
+            <option value="avaliacao">Melhor Avaliadas</option>
+            <option value="recentes">Mais Recentes</option>
+          </select>
+        </p>
+      </form>
+    </section>
+
+    <!--
+      Os cartões são adicionados diretamente nesta seção
+      para manter o grid original do CSS.
+    -->
+    <section
+      id="lista-barbearias"
+      aria-label="Barbearias cadastradas"
+    >
+      <h2>Barbearias em Destaque:</h2>
+
+      <p
+        id="estado-lista"
+        role="status"
+        aria-live="polite"
+      >
+        Carregando barbearias...
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      2026 BarberHub - Sistema de Gerenciamento
+      e Agendamento para Barbearias.
+    </p>
+  </footer>
 </body>
 </html>
