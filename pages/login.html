@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar | BarberHub</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/autenticacao.css">
+  <script src="../assets/js/autenticacao.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>
+      <a href="../index.html" class="auth-logo">BarberHub</a>
+    </h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Início / Barbearias</a></li>
+        <li><a href="cadastro.html">Criar conta</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="auth-main">
+    <section class="auth-layout auth-login">
+      <aside class="auth-lateral">
+        <span class="auth-tag">BARBERHUB</span>
+        <h2>Seu estilo começa com uma boa escolha.</h2>
+        <p>
+          Explore barbearias, compare serviços
+          e encontre profissionais para seu próximo corte.
+        </p>
+
+        <div class="auth-beneficios">
+          <p>✓ Descubra barbearias</p>
+          <p>✓ Consulte serviços e preços</p>
+          <p>✓ Navegue com facilidade</p>
+        </div>
+
+        <a href="../index.html" class="auth-link-voltar">
+          ← Voltar ao início
+        </a>
+      </aside>
+
+      <div class="auth-card">
+        <div class="auth-cabecalho">
+          <span class="auth-tag">ÁREA DO CLIENTE</span>
+          <h2>Bem-vindo de volta!</h2>
+          <p>Entre para continuar no BarberHub.</p>
+        </div>
+
+        <p id="auth-mensagem"
+           class="auth-mensagem"
+           role="status"
+           aria-live="polite"
+           hidden></p>
+
+        <form id="form-login" novalidate>
+          <div class="auth-campos">
+            <div class="auth-campo">
+              <label for="login-email">E-mail</label>
+              <input
+                type="email"
+                id="login-email"
+                name="email"
+                placeholder="seuemail@exemplo.com"
+                autocomplete="email"
+                required
+              >
+            </div>
+
+            <div class="auth-campo">
+              <label for="login-senha">Senha</label>
+              <input
+                type="password"
+                id="login-senha"
+                name="senha"
+                placeholder="Digite sua senha"
+                autocomplete="current-password"
+                required
+              >
+            </div>
+          </div>
+
+          <p class="auth-aviso-demo">
+            Versão demonstrativa: a entrada ainda não
+            autentica senhas. Use o e-mail de um cliente
+            cadastrado neste navegador para visualizar
+            a simulação de sessão.
+          </p>
+
+          <button type="submit" class="auth-botao-principal">
+            Entrar
+          </button>
+        </form>
+
+        <p class="auth-rodape-card">
+          Ainda não tem uma conta?
+          <a href="cadastroUsuario.html">Cadastre-se</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      2026 BarberHub - Sistema de Gerenciamento
+      e Agendamento para Barbearias.
+    </p>
+  </footer>
+</body>
+</html>
