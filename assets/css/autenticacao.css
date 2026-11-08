@@ -1,0 +1,392 @@
+
+/* BARBERHUB - CADASTRO DE CLIENTE E LOGIN */
+
+.auth-logo {
+  color: #f59e0b;
+  text-decoration: none;
+}
+
+.auth-logo:hover {
+  color: #fbbf24;
+}
+
+.auth-main {
+  width: min(1150px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.auth-layout {
+  display: grid;
+  grid-template-columns: minmax(250px, .85fr) minmax(0, 1.15fr);
+  gap: 24px;
+  align-items: stretch;
+  margin: 30px 0 50px;
+}
+
+/* PAINEL LATERAL */
+
+.auth-lateral {
+  background: #111827;
+  color: #fff;
+  border-radius: 20px;
+  padding: 42px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.auth-tag {
+  display: inline-block;
+  color: #e58a0a;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.auth-lateral h2 {
+  color: #fff;
+  font-size: clamp(25px, 3vw, 35px);
+  line-height: 1.2;
+  margin: 15px 0;
+}
+
+.auth-lateral > p {
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+.auth-beneficios {
+  margin: 25px 0;
+}
+
+.auth-beneficios p {
+  color: #e2e8f0;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.auth-link-voltar {
+  color: #fbbf24;
+  text-decoration: none;
+  margin-top: 25px;
+  font-weight: 700;
+}
+
+/* CARTÃO */
+
+.auth-card {
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 34px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, .06);
+}
+
+.auth-cabecalho h2 {
+  margin: 10px 0 5px;
+  color: #111827;
+  font-size: 27px;
+}
+
+.auth-cabecalho p,
+.auth-descricao {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.auth-progresso {
+  margin: 25px 0;
+}
+
+.auth-progresso-texto {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.auth-progresso-texto strong {
+  color: #111827;
+}
+
+.auth-progresso-texto span {
+  color: #a85d04;
+  font-weight: 700;
+}
+
+.auth-trilha {
+  height: 6px;
+  margin-top: 10px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.auth-trilha span {
+  display: block;
+  width: 50%;
+  height: 100%;
+  background: #df7900;
+  transition: width .2s ease;
+}
+
+/* FORMULÁRIOS */
+
+.auth-card form {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.auth-card .auth-etapa {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  box-shadow: none;
+  min-width: 0;
+}
+
+.auth-card .auth-etapa legend {
+  font-size: 19px;
+  font-weight: 800;
+  color: #111827;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+.auth-descricao {
+  margin: 5px 0 20px;
+}
+
+.auth-campos {
+  display: grid;
+  gap: 17px;
+}
+
+.auth-grade {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.auth-campo {
+  min-width: 0;
+}
+
+.auth-card .auth-campo label {
+  display: block;
+  margin-bottom: 7px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.auth-card .auth-campo input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+  padding: 0 14px;
+  margin: 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 14px;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+.auth-card .auth-campo input:focus {
+  outline: none;
+  border-color: #df7900;
+  box-shadow: 0 0 0 3px rgba(223, 121, 0, .12);
+  background: #fff;
+}
+
+.auth-grupo-cep {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-grupo-cep input {
+  flex: 1;
+}
+
+/* BOTÕES */
+
+.auth-card .auth-acoes {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  margin-top: 27px;
+}
+
+.auth-card .auth-botao-principal,
+.auth-card .auth-botao-secundario {
+  min-height: 46px;
+  border-radius: 10px;
+  padding: 0 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.auth-card .auth-botao-principal {
+  margin-left: auto;
+  background: #df7900;
+  color: #fff;
+  border: 1px solid #df7900;
+}
+
+.auth-card .auth-botao-principal:hover {
+  background: #bd6500;
+}
+
+.auth-card .auth-botao-secundario {
+  background: #fff7ed;
+  color: #9a5600;
+  border: 1px solid #fed7aa;
+}
+
+.auth-card .auth-botao-secundario:hover {
+  background: #ffedd5;
+}
+
+.auth-card button:disabled {
+  opacity: .65;
+  cursor: not-allowed;
+}
+
+.auth-card [hidden] {
+  display: none !important;
+}
+
+.auth-rodape-card {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.auth-rodape-card a {
+  color: #c46b00;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.auth-mensagem {
+  padding: 12px;
+  border-radius: 10px;
+  margin: 15px 0;
+  font-size: 13px;
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.auth-mensagem[data-tipo="erro"] {
+  background: #fef2f2;
+  color: #991b1b;
+  border-color: #fecaca;
+}
+
+/* LOGIN */
+
+.auth-login .auth-card {
+  align-self: center;
+}
+
+.auth-login .auth-cabecalho {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.auth-login .auth-cabecalho h2 {
+  margin-top: 12px;
+}
+
+.auth-login .auth-campos {
+  margin-top: 22px;
+}
+
+.auth-login .auth-botao-principal {
+  width: 100%;
+  margin: 8px 0 0;
+}
+
+.auth-aviso-demo {
+  font-size: 12px;
+  color: #64748b;
+  background: #f8fafc;
+  border-radius: 9px;
+  padding: 12px;
+  line-height: 1.6;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 850px) {
+  .auth-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-lateral {
+    padding: 26px;
+  }
+
+  .auth-lateral h2 {
+    font-size: 25px;
+  }
+
+  .auth-beneficios {
+    display: none;
+  }
+
+  .auth-link-voltar {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .auth-main {
+    width: calc(100% - 24px);
+  }
+
+  .auth-layout {
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .auth-card {
+    padding: 22px 16px;
+  }
+
+  .auth-grade {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-grupo-cep {
+    flex-wrap: wrap;
+  }
+
+  .auth-grupo-cep button {
+    width: 100%;
+  }
+
+  .auth-card .auth-acoes button {
+    padding: 0 12px;
+  }
+}

@@ -1,90 +1,191 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BarberHub - Cadastro de Usuário</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/pesquisa.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar conta | BarberHub</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/autenticacao.css">
+  <script src="../assets/js/autenticacao.js" defer></script>
 </head>
 <body>
-
-    <header>
-        <h1>
-            <a href="../index.html" class="logo-barberhub">
-            BarberHub
-            </a>
+  <header>
+    <h1>
+      <a href="../index.html" class="auth-logo">BarberHub</a>
     </h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Início / Barbearias</a></li>
-                <li><a href="cadastro.html">Voltar para Opções</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Início / Barbearias</a></li>
+        <li><a href="login.html">Já tenho conta</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section>
-            <h2>Cadastro de Cliente</h2>
+  <main class="auth-main">
+    <section class="auth-layout">
+      <aside class="auth-lateral">
+        <span class="auth-tag">BARBERHUB</span>
+        <h2>Seu próximo corte começa aqui.</h2>
+        <p>
+          Crie seu perfil, descubra barbearias
+          e encontre os melhores profissionais.
+        </p>
 
-            <form action="confirmacaoCadastro.html" method="GET">
-                <fieldset>
-                    <legend>Dados Pessoais</legend>
-                    <p>
-                        <label for="usr-nome">Nome Completo:</label><br>
-                        <input type="text" id="usr-nome" name="nome_completo" required>
-                    </p>
-                    <p>
-                        <label for="usr-telefone">Telefone:</label><br>
-                        <input type="tel" id="usr-telefone" name="telefone" required>
-                    </p>
-                    <p>
-                        <label for="usr-email">E-mail:</label><br>
-                        <input type="email" id="usr-email" name="email" required>
-                    </p>
-                    <p>
-                        <label for="usr-senha">Senha:</label><br>
-                        <input type="password" id="usr-senha" name="senha" minlength="6" required>
-                    </p>
-                </fieldset>
+        <div class="auth-beneficios">
+          <p>✓ Encontre barbearias na sua região</p>
+          <p>✓ Conheça serviços e valores</p>
+          <p>✓ Tenha seus dados organizados</p>
+        </div>
 
-                <fieldset>
-                    <legend>Endereço (ViaCEP)</legend>
-                    <p>
-                        <label for="usr-cep">CEP:</label><br>
-                        <input type="text" id="usr-cep" name="cep" maxlength="8" required>
-                        <button type="button">Buscar CEP</button>
-                    </p>
-                    <p>
-                        <label for="usr-logradouro">Logradouro / Rua:</label><br>
-                        <input type="text" id="usr-logradouro" name="logradouro" required>
-                    </p>
-                    <p>
-                        <label for="usr-numero">Número:</label><br>
-                        <input type="text" id="usr-numero" name="numero" required>
-                    </p>
-                    <p>
-                        <label for="usr-bairro">Bairro:</label><br>
-                        <input type="text" id="usr-bairro" name="bairro" required>
-                    </p>
-                    <p>
-                        <label for="usr-cidade">Cidade:</label><br>
-                        <input type="text" id="usr-cidade" name="cidade" required>
-                    </p>
-                    <p>
-                        <label for="usr-uf">UF:</label><br>
-                        <input type="text" id="usr-uf" name="uf" maxlength="2" required>
-                    </p>
-                </fieldset>
+        <a href="../index.html" class="auth-link-voltar">
+          ← Voltar ao início
+        </a>
+      </aside>
 
-                <p><button type="submit">Finalizar Cadastro</button></p>
-            </form>
-        </section>
-    </main>
+      <div class="auth-card">
+        <div class="auth-cabecalho">
+          <span class="auth-tag">CADASTRO DE CLIENTE</span>
+          <h2>Crie sua conta</h2>
+          <p>
+            Preencha seus dados em duas etapas.
+          </p>
+        </div>
 
-    <footer>
-        <p>2026 BarberHub - Sistema de Gerenciamento e Agendamento para Barbearias.</p>
-    </footer>
+        <div class="auth-progresso">
+          <div class="auth-progresso-texto">
+            <strong id="nome-etapa">Dados pessoais</strong>
+            <span id="contador-etapa">Etapa 1 de 2</span>
+          </div>
+          <div class="auth-trilha">
+            <span id="barra-etapa"></span>
+          </div>
+        </div>
 
+        <p id="auth-mensagem"
+           class="auth-mensagem"
+           role="status"
+           aria-live="polite"
+           hidden></p>
+
+        <form id="form-cliente" novalidate>
+          <fieldset class="auth-etapa" data-etapa="0">
+            <legend>Informações pessoais</legend>
+            <p class="auth-descricao">
+              Vamos começar com seus dados de contato.
+            </p>
+
+            <div class="auth-campos">
+              <div class="auth-campo">
+                <label for="usr-nome">Nome completo *</label>
+                <input id="usr-nome" name="nome"
+                       type="text" autocomplete="name"
+                       minlength="3" maxlength="100"
+                       placeholder="Seu nome completo" required>
+              </div>
+
+              <div class="auth-campo">
+                <label for="usr-telefone">Telefone *</label>
+                <input id="usr-telefone" name="telefone"
+                       type="tel" autocomplete="tel"
+                       inputmode="tel" maxlength="15"
+                       placeholder="(31) 99999-9999" required>
+              </div>
+
+              <div class="auth-campo">
+                <label for="usr-email">E-mail *</label>
+                <input id="usr-email" name="email"
+                       type="email" autocomplete="email"
+                       placeholder="seuemail@exemplo.com" required>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="auth-etapa" data-etapa="1" hidden>
+            <legend>Seu endereço</legend>
+            <p class="auth-descricao">
+              Utilize o CEP para preencher o endereço.
+            </p>
+
+            <div class="auth-campos">
+              <div class="auth-campo">
+                <label for="usr-cep">CEP *</label>
+                <div class="auth-grupo-cep">
+                  <input id="usr-cep" name="cep"
+                         type="text" inputmode="numeric"
+                         maxlength="9"
+                         pattern="[0-9]{5}-?[0-9]{3}"
+                         placeholder="00000-000" required>
+                  <button type="button" id="buscar-cep"
+                          class="auth-botao-secundario">
+                    Buscar CEP
+                  </button>
+                </div>
+              </div>
+
+              <div class="auth-campo">
+                <label for="usr-logradouro">Rua / Logradouro *</label>
+                <input id="usr-logradouro" name="logradouro"
+                       type="text" required>
+              </div>
+
+              <div class="auth-grade">
+                <div class="auth-campo">
+                  <label for="usr-numero">Número *</label>
+                  <input id="usr-numero" name="numero"
+                         type="text" required>
+                </div>
+                <div class="auth-campo">
+                  <label for="usr-bairro">Bairro *</label>
+                  <input id="usr-bairro" name="bairro"
+                         type="text" required>
+                </div>
+              </div>
+
+              <div class="auth-grade">
+                <div class="auth-campo">
+                  <label for="usr-cidade">Cidade *</label>
+                  <input id="usr-cidade" name="cidade"
+                         type="text" required>
+                </div>
+                <div class="auth-campo">
+                  <label for="usr-uf">UF *</label>
+                  <input id="usr-uf" name="uf"
+                         type="text" minlength="2"
+                         maxlength="2" placeholder="MG" required>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="auth-acoes">
+            <button type="button" id="voltar-cliente"
+                    class="auth-botao-secundario" hidden>
+              ← Voltar
+            </button>
+
+            <button type="button" id="proximo-cliente"
+                    class="auth-botao-principal">
+              Continuar →
+            </button>
+
+            <button type="submit" id="salvar-cliente"
+                    class="auth-botao-principal" hidden>
+              Finalizar cadastro
+            </button>
+          </div>
+        </form>
+
+        <p class="auth-rodape-card">
+          Já tem uma conta?
+          <a href="login.html">Entrar</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>2026 BarberHub - Sistema de Gerenciamento e Agendamento para Barbearias.</p>
+  </footer>
 </body>
 </html>
