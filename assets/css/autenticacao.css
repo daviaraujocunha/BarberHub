@@ -390,3 +390,63 @@
     padding: 0 12px;
   }
 }
+
+/* ETAPA DE SEGURANÇA */
+
+.auth-ajuda {
+  display: block;
+  margin-top: 7px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.auth-card .auth-mostrar-senha {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #475569;
+  cursor: pointer;
+}
+
+.auth-card .auth-mostrar-senha input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: #df7900;
+}
+
+/* USUÁRIO LOGADO NA DASHBOARD */
+
+.usuario-logado {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.usuario-logado .saudacao-usuario {
+  color: #f59e0b;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.usuario-logado .botao-sair {
+  padding: 8px 13px;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.usuario-logado .botao-sair:hover {
+  background: #374151;
+}
+#menu-entrar[hidden],
+#area-usuario[hidden] {
+  display: none !important;
+}
