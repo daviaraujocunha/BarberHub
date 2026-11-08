@@ -1,0 +1,270 @@
+
+/* =========================================
+   BARBERHUB - PESQUISA E FILTROS
+   ========================================= */
+
+/* Logo clicável */
+
+.logo-barberhub {
+  color: #f59e0b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.logo-barberhub:hover {
+  color: #fbbf24;
+}
+
+.logo-barberhub:focus-visible {
+  outline: 2px solid #fbbf24;
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
+/* Apresentação da pesquisa */
+
+.secao-busca {
+  width: 100%;
+}
+
+.introducao-busca h2 {
+  margin-bottom: 12px;
+}
+
+.introducao-busca p {
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Painel principal */
+
+form[action="index.html"].form-pesquisa {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+
+  padding: 28px;
+  margin-top: 25px;
+  margin-bottom: 35px;
+
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+}
+
+/* Campo de pesquisa */
+
+form[action="index.html"] > p.campo-pesquisa {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  width: 100%;
+}
+
+.campo-pesquisa > label,
+.campo-filtro > label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Input e botão lado a lado */
+
+.grupo-pesquisa {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* Caixa com ícone de lupa */
+
+.entrada-pesquisa {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+  gap: 12px;
+
+  background: #f8fafc;
+  border: 1px solid #d9e0e8;
+  border-radius: 11px;
+
+  padding: 0 15px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.entrada-pesquisa svg {
+  flex-shrink: 0;
+  color: #94a3b8;
+}
+
+.entrada-pesquisa:focus-within {
+  background: #ffffff;
+  border-color: #e48100;
+  box-shadow: 0 0 0 3px rgba(228, 129, 0, 0.13);
+}
+
+form[action="index.html"] .entrada-pesquisa input {
+  width: 100%;
+  min-width: 0;
+  height: 52px;
+
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  padding: 0;
+  margin: 0;
+
+  font-size: 15px;
+  color: #0f172a;
+}
+
+form[action="index.html"] .entrada-pesquisa input:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.entrada-pesquisa input::placeholder {
+  color: #94a3b8;
+}
+
+/* Botão Buscar */
+
+form[action="index.html"] .botao-buscar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 130px;
+  min-height: 52px;
+
+  background: #df7900;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 11px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+form[action="index.html"] .botao-buscar:hover {
+  background: #bd6500;
+  box-shadow: 0 4px 12px rgba(223, 121, 0, 0.2);
+}
+
+form[action="index.html"] .botao-buscar:active {
+  transform: translateY(1px);
+}
+
+/* Filtros em duas colunas */
+
+form[action="index.html"] > p.campos-filtros {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.campo-filtro {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+form[action="index.html"] .campo-filtro select {
+  width: 100%;
+  height: 50px;
+
+  background-color: #f8fafc;
+  border: 1px solid #d9e0e8;
+  border-radius: 11px;
+
+  padding: 0 14px;
+
+  color: #0f172a;
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+form[action="index.html"] .campo-filtro select:focus {
+  outline: none;
+  background-color: #ffffff;
+  border-color: #e48100;
+  box-shadow: 0 0 0 3px rgba(228, 129, 0, 0.13);
+}
+
+/* Responsividade para tablets */
+
+@media (max-width: 768px) {
+  form[action="index.html"].form-pesquisa {
+    padding: 22px;
+  }
+}
+
+/* Responsividade para celulares */
+
+@media (max-width: 600px) {
+  form[action="index.html"].form-pesquisa {
+    padding: 18px;
+    gap: 18px;
+    border-radius: 14px;
+  }
+
+  .grupo-pesquisa {
+    flex-direction: column;
+  }
+
+  form[action="index.html"] .botao-buscar {
+    width: 100%;
+  }
+
+  form[action="index.html"] > p.campos-filtros {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .entrada-pesquisa {
+    min-height: 52px;
+  }
+}
+
+/* Remove apenas a borda interna do campo de pesquisa */
+
+form[action="index.html"] .entrada-pesquisa input[type="search"],
+form[action="index.html"] .entrada-pesquisa input[type="search"]:focus,
+form[action="index.html"] .entrada-pesquisa input[type="search"]:hover {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+}
+
+/* Alinha o título da pesquisa à esquerda */
+
+.form-pesquisa .campo-pesquisa > label {
+    display: block;
+    width: 100%;
+    text-align: left !important;
+}

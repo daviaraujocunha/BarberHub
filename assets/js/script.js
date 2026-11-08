@@ -597,7 +597,8 @@ function renderizarBarbearias() {
     ) &&
     (
       categoria === "todas" ||
-      item.categoria === categoria
+      item.categoria === categoria ||
+      (categoria === "tradicional" && item.categoria === "pub")
     )
   );
 

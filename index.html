@@ -5,12 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BarberHub - Encontre sua Barbearia</title>
+
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/pesquisa.css">
+
   <script src="assets/js/script.js" defer></script>
 </head>
 <body>
+
   <header>
-    <h1>BarberHub</h1>
+    <h1>
+      <a href="index.html" class="logo-barberhub">
+        BarberHub
+      </a>
+    </h1>
 
     <nav>
       <ul>
@@ -32,57 +40,102 @@
   </header>
 
   <main>
-    <section>
-      <h2>
-        Encontre as melhores barbearias da sua região
-      </h2>
+    <section class="secao-busca">
+      <div class="introducao-busca">
+        <h2>
+          Encontre as melhores barbearias da sua região
+        </h2>
 
-      <p>
-        Agende seu horário com os melhores profissionais
-        de forma rápida e simples.
-      </p>
-
-      <form action="index.html" method="GET">
         <p>
-          <label for="busca">Pesquisar:</label>
+          Pesquise pelo nome ou pela cidade e encontre
+          o lugar ideal para cuidar do seu estilo.
+        </p>
+      </div>
 
-          <input
-            type="search"
-            id="busca"
-            name="busca"
-            placeholder="Buscar por nome da barbearia ou cidade..."
-          >
+      <form
+        action="index.html"
+        method="GET"
+        class="form-pesquisa"
+      >
+        <p class="campo-pesquisa">
+          <label for="busca">Pesquisar barbearias</label>
 
-          <button type="submit">Buscar</button>
+          <span class="grupo-pesquisa">
+            <span class="entrada-pesquisa">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.35-4.35"></path>
+              </svg>
+
+              <input
+                type="search"
+                id="busca"
+                name="busca"
+                placeholder="Nome da barbearia ou cidade..."
+                autocomplete="off"
+              >
+            </span>
+
+            <button type="submit" class="botao-buscar">
+              Buscar
+            </button>
+          </span>
         </p>
 
-        <p>
-          <label for="filtro-categoria">
-            Filtrar por Categoria:
-          </label>
+        <p class="campos-filtros">
+          <span class="campo-filtro">
+            <label for="filtro-categoria">
+              Categoria
+            </label>
 
-          <select id="filtro-categoria" name="categoria">
-            <option value="todas">Todas as Categorias</option>
-            <option value="tradicional">Tradicional</option>
-            <option value="premium">Premium</option>
-            <option value="pub">Barber Pub / Bar</option>
-          </select>
+            <select
+              id="filtro-categoria"
+              name="categoria"
+            >
+              <option value="todas">
+                Todas as categorias
+              </option>
+              <option value="tradicional">
+                Tradicional
+              </option>
+              <option value="premium">
+                Premium
+              </option>
+            </select>
+          </span>
 
-          <label for="ordenacao">Ordenar por:</label>
+          <span class="campo-filtro">
+            <label for="ordenacao">
+              Ordenar por
+            </label>
 
-          <select id="ordenacao" name="ordenacao">
-            <option value="nome">Nome (A-Z)</option>
-            <option value="avaliacao">Melhor Avaliadas</option>
-            <option value="recentes">Mais Recentes</option>
-          </select>
+            <select id="ordenacao" name="ordenacao">
+              <option value="nome">
+                Nome (A-Z)
+              </option>
+              <option value="avaliacao">
+                Melhor avaliadas
+              </option>
+              <option value="recentes">
+                Mais recentes
+              </option>
+            </select>
+          </span>
         </p>
       </form>
     </section>
 
-    <!--
-      Os cartões são adicionados diretamente nesta seção
-      para manter o grid original do CSS.
-    -->
     <section
       id="lista-barbearias"
       aria-label="Barbearias cadastradas"
@@ -105,5 +158,6 @@
       e Agendamento para Barbearias.
     </p>
   </footer>
+
 </body>
 </html>
